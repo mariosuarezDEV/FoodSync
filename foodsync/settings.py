@@ -90,8 +90,9 @@ WSGI_APPLICATION = "foodsync.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(default=os.getenv("DATABASE_DEV_URL"))
+    "default": dj_database_url.config(default=os.getenv("DATABASE_PUBLIC_URL"))
 }
+# La base de datos se encuentra en la variable de entorno DATABASE
 
 
 # Password validation
