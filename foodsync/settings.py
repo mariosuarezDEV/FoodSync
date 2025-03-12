@@ -26,15 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-75%5%7(*kdc5y5)4&24p)ztp$slpo&4tgegyikxw&9-slt4hb^"
+SECRET_KEY = 'django-insecure-6i#o&9)bcc80mmaky3#g^-i&-5(#$+7jm4a(opn@+5pky2bf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", False)
 
 ALLOWED_HOSTS = ['*']
 # Acepatar todas las peticiones
-CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://menu.florcatorce.com']
+CSRF_TRUSTED_ORIGINS = ['http://*','https://*', 'https://menu.florcatorce.com']
 # https://menu.florcatorce.com
 
 # CORS_ALLOWED_ORIGINS = []
