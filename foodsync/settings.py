@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+# Cargar variables de entorno
+from dotenv import load_dotenv
+import os
+import dj_database_url
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-75%5%7(*kdc5y5)4&24p)ztp$slpo&4tgegyikxw&9-slt4hb^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", False)
 
 ALLOWED_HOSTS = ['*']
+# Acepatar todas las peticiones
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = []
 
 
 # Application definition
@@ -81,14 +90,7 @@ WSGI_APPLICATION = "foodsync.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "foodsync_db",
-        "USER": "lmsuarez_admin",
-        "PASSWORD": "edqnLMCSf31.",
-        "HOST": "db",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(default=os.getenv("DATABASE_PUBLIC_URL"))
 }
 
 
