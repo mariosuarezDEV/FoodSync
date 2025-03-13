@@ -27,6 +27,6 @@ class ModelSubGrupo(models.Model):
         return self.nombre
     
     class Meta:
-        verbose_name = "SubGrupo"
-        verbose_name_plural = "SubGrupos"
+        verbose_name = "Sub grupo"
+        verbose_name_plural = "Sub Grupos"
         db_table = "subgrupo"
